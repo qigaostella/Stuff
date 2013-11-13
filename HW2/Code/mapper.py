@@ -6,12 +6,14 @@ import sys
 for line in sys.stdin:
     line = line.strip()
     pairs = line.split('\n')
+    # extract x and y coordinates
     for pair in pairs:
         pair = pair.strip()
         pair = pair.split()
         x = float(pair[0])
         y = float(pair[1])
         
+        # find the lower bounds of the bin
         if round(x, 1) < x:
             x_low = round(x, 1)
         elif round(x, 1) > x:
